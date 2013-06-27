@@ -1,0 +1,63 @@
+/*-------------------------------------------------------------*/
+/* PURELY CSS MODAL */
+/* Authored by Mirai Akagawa - mail@makagawa.com */
+/* Copyright Policy - for personal use only, 
+please cite this comment when use */
+/*-------------------------------------------------------------*/
+
+input[type="checkbox"]{
+	visibility: hidden;
+}
+
+label{
+	margin: 0;
+	padding: 0;
+}
+
+input[type="checkbox"]:checked + .modal-background{
+	visibility: visible;
+} 	
+
+input[type="checkbox"]:checked + .modal-contents{
+	visibility: visible;
+} 
+
+.modal-contents{
+	visibility: hidden;
+}
+
+.modal-contents .modal-background{
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 100%; 
+	height: 100%; 
+	position: fixed; 
+	background-color: rgba(0,0,0,0.8);
+}
+
+.modal-contents .modal{
+  z-index: 5
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  margin-top: -120px;
+  margin-left: -300px;
+  height: 240px;
+  width: 600px;
+  background: white;
+}
+
+/* Example Mixin
+@mixin modal($height, $width){
+  z-index: 5;
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  margin-top: $height / 2 * (-1); 
+  margin-left: $width / 2 * (-1);
+  height: $height;
+  width: $width;
+  background: white;
+}
+*/
